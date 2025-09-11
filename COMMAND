@@ -1,1 +1,1 @@
-COMMAND= docker pull gleg0/weather>:latest
+COMMAND= docker pull gleg0/weather:latest
