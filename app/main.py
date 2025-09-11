@@ -5,6 +5,7 @@ BASE_URL = "http://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
 AQI = "no"
 
+
 def get_weather() -> None:
     api_key = os.getenv("API_KEY")
     if not api_key:
