@@ -1,16 +1,18 @@
 import os
 import requests
 
+BASE_URL = "http://api.weatherapi.com/v1/current.json"
+CITY = "Paris"
+AQI = "no"
 
 def get_weather() -> None:
     api_key = os.getenv("API_KEY")
     if not api_key:
         raise ValueError("API_KEY is not set in environment variables")
 
-    url = "http://api.weatherapi.com/v1/current.json"
-    params = {"key": api_key, "q": "Paris", "aqi": "no"}
+    params = {"key": api_key, "q": CITY, "aqi": AQI}
 
-    response = requests.get(url, params=params)
+    response = requests.get(BASE_URL, params=params)
     response.raise_for_status()
     data = response.json()
 
