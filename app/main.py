@@ -1,10 +1,11 @@
+import os
 import requests
 
 
 def get_weather() -> None:
-    api_key = "f89358b2221f41f8a6c130205251109"
+    api_key = os.getenv("API_KEY")
     if not api_key:
-        raise ValueError()
+        raise ValueError("API_KEY is not set in environment variables")
 
     url = "http://api.weatherapi.com/v1/current.json"
     params = {"key": api_key, "q": "Paris", "aqi": "no"}
