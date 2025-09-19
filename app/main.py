@@ -33,5 +33,6 @@ def get_weather() -> None:
     city, temp_c, condition = parse_weather(data)
     print_weather(city, temp_c, condition)
 
+
 if __name__ == "__main__":
     get_weather()
